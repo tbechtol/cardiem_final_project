@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :drivers
+  # Routes for the Driver resource:
+  # READ
+  get "/drivers", :controller => "drivers", :action => "index"
+  get "/drivers/:id", :controller => "drivers", :action => "show"
+
+
   devise_for :users
   # Routes for the User resource:
   # READ
