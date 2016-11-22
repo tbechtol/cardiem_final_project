@@ -29,3 +29,34 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many cars -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Cars
+      </li>
+
+      <% @user.cars.each do |car| %>
+        <li class="list-group-item">
+          <a href="/cars/<%= car.id %>">
+            <%= car.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/cars/<%= car.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/cars/<%= car.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_car/<%= car.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

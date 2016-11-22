@@ -44,3 +44,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Service request has many service_notifications -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Service_notifications
+      </li>
+
+      <% @service_request.service_notifications.each do |service_notification| %>
+        <li class="list-group-item">
+          <a href="/service_notifications/<%= service_notification.id %>">
+            <%= service_notification.service_request_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/service_notifications/<%= service_notification.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/service_notifications/<%= service_notification.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_service_notification/<%= service_notification.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
