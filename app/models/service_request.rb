@@ -1,6 +1,9 @@
 class ServiceRequest < ApplicationRecord
   # Direct associations
 
+  has_many   :service_notifications,
+             :dependent => :destroy
+
   belongs_to :car,
              :counter_cache => true
 
