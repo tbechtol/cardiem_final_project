@@ -1,6 +1,7 @@
 class ServiceRequestsController < ApplicationController
   def index
-    @service_requests = ServiceRequest.page(params[:page]).per(10)
+    @q = ServiceRequest.ransack(params[:q])
+    @service_requests = @q.result(:distinct => true).includes(:driver, :car, :service_notifications).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@service_requests.where.not(:pickup_location_latitude => nil)) do |service_request, marker|
       marker.lat service_request.pickup_location_latitude
       marker.lng service_request.pickup_location_longitude

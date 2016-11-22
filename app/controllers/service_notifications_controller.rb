@@ -1,6 +1,7 @@
 class ServiceNotificationsController < ApplicationController
   def index
-    @service_notifications = ServiceNotification.page(params[:page]).per(10)
+    @q = ServiceNotification.ransack(params[:q])
+    @service_notifications = @q.result(:distinct => true).includes(:service_request).page(params[:page]).per(10)
 
     render("service_notifications/index.html.erb")
   end
