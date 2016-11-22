@@ -5,6 +5,8 @@ class ServiceRequest < ApplicationRecord
 
   # Validations
 
+  validates :car_id, :presence => true
+
   validates :rc_phone, :presence => true
 
   validates :rc_phone, :numericality => true
