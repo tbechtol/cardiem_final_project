@@ -1,6 +1,16 @@
 class ServiceRequestsController < ApplicationController
   def index
     @service_requests = ServiceRequest.all
+    @location_hash = Gmaps4rails.build_markers(@service_requests.where.not(:pickup_location_latitude => nil)) do |service_request, marker|
+      marker.lat service_request.pickup_location_latitude
+      marker.lng service_request.pickup_location_longitude
+      marker.infowindow "<h5><a href='/service_requests/#{service_request.id}'>#{service_request.created_at}</a></h5><small>#{service_request.pickup_location_formatted_address}</small>"
+    end
+    @location_hash = Gmaps4rails.build_markers(@service_requests.where.not(:repair_center_location_latitude => nil)) do |service_request, marker|
+      marker.lat service_request.repair_center_location_latitude
+      marker.lng service_request.repair_center_location_longitude
+      marker.infowindow "<h5><a href='/service_requests/#{service_request.id}'>#{service_request.created_at}</a></h5><small>#{service_request.repair_center_location_formatted_address}</small>"
+    end
 
     render("service_requests/index.html.erb")
   end
