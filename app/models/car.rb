@@ -5,6 +5,8 @@ class Car < ApplicationRecord
 
   # Validations
 
+  validates :year, :presence => true
+
   validates :year, :numericality => true
 
 end
