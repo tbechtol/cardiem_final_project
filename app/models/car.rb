@@ -1,6 +1,8 @@
 class Car < ApplicationRecord
   # Direct associations
 
+  has_many   :service_requests
+
   belongs_to :user,
              :counter_cache => true
 
