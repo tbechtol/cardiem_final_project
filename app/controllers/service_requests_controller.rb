@@ -6,6 +6,7 @@ class ServiceRequestsController < ApplicationController
   end
 
   def show
+    @service_notification = ServiceNotification.new
     @service_request = ServiceRequest.find(params[:id])
 
     render("service_requests/show.html.erb")

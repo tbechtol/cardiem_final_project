@@ -68,6 +68,83 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_service_request" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for car_id -->
+      <input type="hidden" name="car_id" value="<%= @car.id %>">
+
+      <!-- Label and input for rc_phone -->
+      <div class="form-group">
+        <label for="rc_phone" class="control-label">
+          Rc phone
+        </label>
+
+        <input type="text" id="rc_phone" name="rc_phone" placeholder="Rc phone" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for driver_id -->
+      <div class="form-group">
+        <label for="driver_id" class="control-label">
+          Driver
+        </label>
+
+        <%= select_tag(:driver_id, options_from_collection_for_select(Driver.all, :id, :email), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for repair_center_location -->
+      <div class="form-group">
+        <label for="repair_center_location" class="control-label">
+          Repair center location
+        </label>
+
+        <input type="text" id="repair_center_location" name="repair_center_location" placeholder="Repair center location" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for pickup_location -->
+      <div class="form-group">
+        <label for="pickup_location" class="control-label">
+          Pickup location
+        </label>
+
+        <input type="text" id="pickup_location" name="pickup_location" placeholder="Pickup location" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for pickup_time -->
+      <div class="form-group">
+        <label for="pickup_time" class="control-label">
+          Pickup time
+        </label>
+
+        <input type="text" id="pickup_time" name="pickup_time" placeholder="Pickup time" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for pickup_date -->
+      <div class="form-group">
+        <label for="pickup_date" class="control-label">
+          Pickup date
+        </label>
+
+        <input type="text" id="pickup_date" name="pickup_date" placeholder="Pickup date" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for rc_name -->
+      <div class="form-group">
+        <label for="rc_name" class="control-label">
+          Rc name
+        </label>
+
+        <input type="text" id="rc_name" name="rc_name" placeholder="Rc name" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Service Request
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

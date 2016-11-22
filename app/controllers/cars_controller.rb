@@ -16,6 +16,7 @@ class CarsController < ApplicationController
   end
 
   def show
+    @service_request = ServiceRequest.new
     @car = Car.find(params[:id])
 
     render("cars/show.html.erb")
