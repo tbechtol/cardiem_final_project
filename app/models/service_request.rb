@@ -5,4 +5,6 @@ class ServiceRequest < ApplicationRecord
 
   # Validations
 
+  validates :rc_phone, :numericality => true
+
 end
