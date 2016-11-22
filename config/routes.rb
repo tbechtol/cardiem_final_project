@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "cars#index"
   # Routes for the Service_notification resource:
   # CREATE
   get "/service_notifications/new", :controller => "service_notifications", :action => "new"
