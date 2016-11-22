@@ -5,6 +5,8 @@ class Car < ApplicationRecord
 
   # Validations
 
+  validates :make, :presence => true
+
   validates :mileage, :presence => true
 
   validates :mileage, :numericality => true
