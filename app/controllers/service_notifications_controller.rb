@@ -1,6 +1,6 @@
 class ServiceNotificationsController < ApplicationController
   def index
-    @service_notifications = ServiceNotification.all
+    @service_notifications = ServiceNotification.page(params[:page]).per(10)
 
     render("service_notifications/index.html.erb")
   end
