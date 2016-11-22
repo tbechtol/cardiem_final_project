@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Service_request resource:
+  # CREATE
+  get "/service_requests/new", :controller => "service_requests", :action => "new"
+  post "/create_service_request", :controller => "service_requests", :action => "create"
+
+  # READ
+  get "/service_requests", :controller => "service_requests", :action => "index"
+  get "/service_requests/:id", :controller => "service_requests", :action => "show"
+
+  # UPDATE
+  get "/service_requests/:id/edit", :controller => "service_requests", :action => "edit"
+  post "/update_service_request/:id", :controller => "service_requests", :action => "update"
+
+  # DELETE
+  get "/delete_service_request/:id", :controller => "service_requests", :action => "destroy"
+  #------------------------------
+
   # Routes for the Car resource:
   # CREATE
   get "/cars/new", :controller => "cars", :action => "new"
