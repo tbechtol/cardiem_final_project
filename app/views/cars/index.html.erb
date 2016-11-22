@@ -1,0 +1,38 @@
+<div class="page-header">
+  <h1>
+    Cars
+    <a href="/cars/new" class="btn btn-lg btn-success">New Car</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>User</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Mileage</th>
+        <th>Service history</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.user_id %></td>
+        <td><%= car.make %></td>
+        <td><%= car.model %></td>
+        <td><%= car.year %></td>
+        <td><%= car.mileage %></td>
+        <td><%= car.service_history %></td>
+        <td>
+          <a href="/cars/<%= car.id %>" class="btn btn-primary">Show</a>
+          <a href="/cars/<%= car.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_car/<%= car.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

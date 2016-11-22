@@ -1,0 +1,82 @@
+<!-- Validation failure messages -->
+<% if @car.errors.any? %>
+  <% @car.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Car #<%= @car.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_car/<%= @car.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @car.user_id %>">
+      </div>
+
+      <!-- Label and input for make -->
+      <div class="form-group">
+        <label for="make" class="control-label">
+          Make
+        </label>
+
+        <input type="text" id="make" name="make" placeholder="Make" class="form-control" value="<%= @car.make %>">
+      </div>
+
+      <!-- Label and input for model -->
+      <div class="form-group">
+        <label for="model" class="control-label">
+          Model
+        </label>
+
+        <input type="text" id="model" name="model" placeholder="Model" class="form-control" value="<%= @car.model %>">
+      </div>
+
+      <!-- Label and input for year -->
+      <div class="form-group">
+        <label for="year" class="control-label">
+          Year
+        </label>
+
+        <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="<%= @car.year %>">
+      </div>
+
+      <!-- Label and input for mileage -->
+      <div class="form-group">
+        <label for="mileage" class="control-label">
+          Mileage
+        </label>
+
+        <input type="text" id="mileage" name="mileage" placeholder="Mileage" class="form-control" value="<%= @car.mileage %>">
+      </div>
+
+      <!-- Label and input for service_history -->
+      <div class="form-group">
+        <label for="service_history" class="control-label">
+          Service history
+        </label>
+
+        <input type="text" id="service_history" name="service_history" placeholder="Service history" class="form-control" value="<%= @car.service_history %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Car
+      </button>
+      or
+      <a href="/cars/<%= @car.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
