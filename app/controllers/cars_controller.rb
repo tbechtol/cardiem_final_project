@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :current_user_must_be_car_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_car_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_car_user
     car = Car.find(params[:id])
