@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Service_notification resource:
+  # CREATE
+  get "/service_notifications/new", :controller => "service_notifications", :action => "new"
+  post "/create_service_notification", :controller => "service_notifications", :action => "create"
+
+  # READ
+  get "/service_notifications", :controller => "service_notifications", :action => "index"
+  get "/service_notifications/:id", :controller => "service_notifications", :action => "show"
+
+  # UPDATE
+  get "/service_notifications/:id/edit", :controller => "service_notifications", :action => "edit"
+  post "/update_service_notification/:id", :controller => "service_notifications", :action => "update"
+
+  # DELETE
+  get "/delete_service_notification/:id", :controller => "service_notifications", :action => "destroy"
+  #------------------------------
+
   # Routes for the Service_request resource:
   # CREATE
   get "/service_requests/new", :controller => "service_requests", :action => "new"
