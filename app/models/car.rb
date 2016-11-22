@@ -5,6 +5,8 @@ class Car < ApplicationRecord
 
   # Validations
 
+  validates :mileage, :numericality => true
+
   validates :model, :presence => true
 
   validates :year, :presence => true
