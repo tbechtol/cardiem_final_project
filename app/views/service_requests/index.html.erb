@@ -22,9 +22,21 @@
 
       <% @service_requests.each do |service_request| %>
       <tr>
-        <td><%= service_request.car.user_id %></td>
+        <td>
+          <% if service_request.car.present? %>
+            <a href="/cars/<%= service_request.car.id %>">
+              <%= service_request.car.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= service_request.rc_phone %></td>
-        <td><%= service_request.driver.email %></td>
+        <td>
+          <% if service_request.driver.present? %>
+            <a href="/drivers/<%= service_request.driver.id %>">
+              <%= service_request.driver.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= service_request.repair_center_location %></td>
         <td><%= service_request.pickup_location %></td>
         <td><%= service_request.pickup_time %></td>

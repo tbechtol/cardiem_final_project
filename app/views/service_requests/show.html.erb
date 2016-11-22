@@ -6,13 +6,25 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Car</dt>
-      <dd><%= @service_request.car_id %></dd>
+      <dd>
+        <% if @service_request.car.present? %>
+          <a href="/cars/<%= @service_request.car_id %>">
+            <%= @service_request.car.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Rc phone</dt>
       <dd><%= @service_request.rc_phone %></dd>
 
       <dt>Driver</dt>
-      <dd><%= @service_request.driver_id %></dd>
+      <dd>
+        <% if @service_request.driver.present? %>
+          <a href="/drivers/<%= @service_request.driver_id %>">
+            <%= @service_request.driver.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Repair center location</dt>
       <dd>

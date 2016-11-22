@@ -20,7 +20,13 @@
 
       <% @cars.each do |car| %>
       <tr>
-        <td><%= car.user.email %></td>
+        <td>
+          <% if car.user.present? %>
+            <a href="/users/<%= car.user.id %>">
+              <%= car.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= car.make %></td>
         <td><%= car.model %></td>
         <td><%= car.year %></td>
