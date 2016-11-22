@@ -22,7 +22,7 @@
 
       <% @service_requests.each do |service_request| %>
       <tr>
-        <td><%= service_request.car_id %></td>
+        <td><%= service_request.car.user_id %></td>
         <td><%= service_request.rc_phone %></td>
         <td><%= service_request.driver_id %></td>
         <td><%= service_request.repair_center_location %></td>
