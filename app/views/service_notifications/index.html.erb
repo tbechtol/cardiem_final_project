@@ -16,7 +16,7 @@
 
       <% @service_notifications.each do |service_notification| %>
       <tr>
-        <td><%= service_notification.service_request_id %></td>
+        <td><%= service_notification.service_request.car_id %></td>
         <td><%= service_notification.status %></td>
         <td>
           <a href="/service_notifications/<%= service_notification.id %>" class="btn btn-primary">Show</a>
