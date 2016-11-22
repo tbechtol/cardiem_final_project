@@ -1,6 +1,8 @@
 class Driver < ApplicationRecord
   # Direct associations
 
+  has_many   :service_requests
+
   # Indirect associations
 
   # Validations

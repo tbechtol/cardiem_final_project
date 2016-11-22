@@ -1,6 +1,9 @@
 class ServiceRequest < ApplicationRecord
   # Direct associations
 
+  belongs_to :driver,
+             :counter_cache => true
+
   # Indirect associations
 
   # Validations
