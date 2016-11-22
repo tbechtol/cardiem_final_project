@@ -1,4 +1,14 @@
 class CarsController < ApplicationController
+  before_action :current_user_must_be_car_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_car_user
+    car = Car.find(params[:id])
+
+    unless current_user == car.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @cars = Car.all
 
