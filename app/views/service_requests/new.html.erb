@@ -24,7 +24,7 @@
           Car
         </label>
 
-        <input type="text" id="car_id" name="car_id" placeholder="Car" class="form-control" value="<%= @service_request.car_id %>">
+        <%= select_tag(:car_id, options_from_collection_for_select(Car.all, :id, :user_id, @service_request.car_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for rc_phone -->
