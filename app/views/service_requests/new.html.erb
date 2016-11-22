@@ -42,7 +42,7 @@
           Driver
         </label>
 
-        <input type="text" id="driver_id" name="driver_id" placeholder="Driver" class="form-control" value="<%= @service_request.driver_id %>">
+        <%= select_tag(:driver_id, options_from_collection_for_select(Driver.all, :id, :email, @service_request.driver_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for repair_center_location -->
