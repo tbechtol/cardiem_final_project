@@ -10,7 +10,7 @@ class CarsController < ApplicationController
   end
 
   def index
-    @cars = Car.all
+    @cars = current_user.cars.page(params[:page]).per(10)
 
     render("cars/index.html.erb")
   end
