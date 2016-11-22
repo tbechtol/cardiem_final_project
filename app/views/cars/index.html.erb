@@ -20,7 +20,7 @@
 
       <% @cars.each do |car| %>
       <tr>
-        <td><%= car.user_id %></td>
+        <td><%= car.user.email %></td>
         <td><%= car.make %></td>
         <td><%= car.model %></td>
         <td><%= car.year %></td>
