@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>
-    Cars
+    <%= current_user.first_name %>'s Cars
     <a href="/cars/new" class="btn btn-lg btn-success">New Car</a>
   </h1>
 </div><div class="row mb-1">
@@ -131,7 +131,7 @@
         <td><%= car.service_history %></td>
         <td>
           <a href="/cars/<%= car.id %>" class="btn btn-primary">Show</a>
-          
+
           <% if current_user == car.user %>
             <a href="/cars/<%= car.id %>/edit" class="btn btn-warning">Edit</a>
             <a href="/delete_car/<%= car.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
