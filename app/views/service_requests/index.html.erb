@@ -10,13 +10,13 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>Car</th>
-        <th>Rc phone</th>
-        <th>Driver</th>
-        <th>Repair center location</th>
-        <th>Pickup location</th>
-        <th>Pickup time</th>
+        <th>Pickup address</th>
         <th>Pickup date</th>
-        <th>Rc name</th>
+        <th>Pickup time</th>
+        <th>Service center name</th>
+        <th>Service center address</th>
+        <th>Service center phone number</th>
+        <th>Driver</th>
         <th>Actions</th>
       </tr>
 
@@ -29,6 +29,11 @@
             </a>
           <% end %>
         </td>
+        <td><%= service_request.pickup_location %></td>
+        <td><%= service_request.pickup_date %></td>
+        <td><%= service_request.pickup_time %></td>
+                <td><%= service_request.rc_name %></td>
+        <td><%= service_request.repair_center_location %></td>
         <td><%= service_request.rc_phone %></td>
         <td>
           <% if service_request.driver.present? %>
@@ -37,11 +42,8 @@
             </a>
           <% end %>
         </td>
-        <td><%= service_request.repair_center_location %></td>
-        <td><%= service_request.pickup_location %></td>
-        <td><%= service_request.pickup_time %></td>
-        <td><%= service_request.pickup_date %></td>
-        <td><%= service_request.rc_name %></td>
+
+
         <td>
           <a href="/service_requests/<%= service_request.id %>" class="btn btn-primary">Show</a>
           <a href="/service_requests/<%= service_request.id %>/edit" class="btn btn-warning">Edit</a>

@@ -14,25 +14,6 @@
         <% end %>
       </dd>
 
-      <dt>Rc phone</dt>
-      <dd><%= @service_request.rc_phone %></dd>
-
-      <dt>Driver</dt>
-      <dd>
-        <% if @service_request.driver.present? %>
-          <a href="/drivers/<%= @service_request.driver_id %>">
-            <%= @service_request.driver.email %>
-          </a>
-        <% end %>
-      </dd>
-
-      <dt>Repair center location</dt>
-      <dd>
-        <div>
-          <div id="location_map" style="height: 480px;"></div>
-        </div>
-      </dd>
-
       <dt>Pickup location</dt>
       <dd>
         <div>
@@ -46,8 +27,27 @@
       <dt>Pickup date</dt>
       <dd><%= @service_request.pickup_date %></dd>
 
-      <dt>Rc name</dt>
+      <dt>Service Center Phone Number</dt>
+      <dd><%= @service_request.rc_phone %></dd>
+
+      <dt>Service center name</dt>
       <dd><%= @service_request.rc_name %></dd>
+
+      <dt>Service center location</dt>
+      <dd>
+        <div>
+          <div id="location_map" style="height: 480px;"></div>
+        </div>
+      </dd>
+
+      <dt>Driver</dt>
+      <dd>
+        <% if @service_request.driver.present? %>
+          <a href="/drivers/<%= @service_request.driver_id %>">
+            <%= @service_request.driver.email %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
@@ -71,7 +71,7 @@
   <div class="col-md-12">
     <ul class="list-group">
       <li class="list-group-item list-group-item-info">
-        Service_notifications
+        Service notifications
       </li>
 
       <% @service_request.service_notifications.each do |service_notification| %>

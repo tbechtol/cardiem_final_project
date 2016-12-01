@@ -27,13 +27,62 @@
         <%= select_tag(:car_id, options_from_collection_for_select(Car.all, :id, :user_id, @service_request.car_id), :class => "form-control") %>
       </div>
 
+      <!-- Label and input for pickup_location -->
+      <div class="form-group">
+        <label for="pickup_location" class="control-label">
+          Pickup Address
+        </label>
+
+        <input type="text" id="pickup_location" name="pickup_location" placeholder="Pickup address" class="form-control" value="<%= @service_request.pickup_location %>">
+      </div>
+
+
+      <!-- Label and input for pickup_date -->
+      <div class="form-group">
+        <label for="pickup_date" class="control-label">
+          Pickup Date
+        </label>
+
+        <input type="text" id="pickup_date" name="pickup_date" placeholder="Pickup date" class="form-control" value="<%= @service_request.pickup_date %>">
+        </div>
+
+
+      <!-- Label and input for pickup_time -->
+      <div class="form-group">
+        <label for="pickup_time" class="control-label">
+          Pickup Time
+        </label>
+
+        <input type="text" id="pickup_time" name="pickup_time" placeholder="Pickup time" class="form-control" value="<%= @service_request.pickup_time %>">
+      </div>
+
+
+      <!-- Label and input for rc_name -->
+      <div class="form-group">
+        <label for="rc_name" class="control-label">
+          Service Center Name
+        </label>
+
+        <input type="text" id="rc_name" name="rc_name" placeholder="Service center name" class="form-control" value="<%= @service_request.rc_name %>">
+      </div>
+
+      <!-- Label and input for repair_center_location -->
+      <div class="form-group">
+        <label for="repair_center_location" class="control-label">
+          Service Center Address
+        </label>
+
+        <input type="text" id="repair_center_location" name="repair_center_location" placeholder="Service center address" class="form-control" value="<%= @service_request.repair_center_location %>">
+      </div>
+
+
       <!-- Label and input for rc_phone -->
       <div class="form-group">
         <label for="rc_phone" class="control-label">
-          Rc phone
+          Service Center Phone Number
         </label>
 
-        <input type="text" id="rc_phone" name="rc_phone" placeholder="Rc phone" class="form-control" value="<%= @service_request.rc_phone %>">
+        <input type="text" id="rc_phone" name="rc_phone" placeholder="Service center phone number" class="form-control" value="<%= @service_request.rc_phone %>">
       </div>
 
       <!-- Label and input for driver_id -->
@@ -45,50 +94,6 @@
         <%= select_tag(:driver_id, options_from_collection_for_select(Driver.all, :id, :email, @service_request.driver_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for repair_center_location -->
-      <div class="form-group">
-        <label for="repair_center_location" class="control-label">
-          Repair center location
-        </label>
-
-        <input type="text" id="repair_center_location" name="repair_center_location" placeholder="Repair center location" class="form-control" value="<%= @service_request.repair_center_location %>">
-      </div>
-
-      <!-- Label and input for pickup_location -->
-      <div class="form-group">
-        <label for="pickup_location" class="control-label">
-          Pickup location
-        </label>
-
-        <input type="text" id="pickup_location" name="pickup_location" placeholder="Pickup location" class="form-control" value="<%= @service_request.pickup_location %>">
-      </div>
-
-      <!-- Label and input for pickup_time -->
-      <div class="form-group">
-        <label for="pickup_time" class="control-label">
-          Pickup time
-        </label>
-
-        <input type="text" id="pickup_time" name="pickup_time" placeholder="Pickup time" class="form-control" value="<%= @service_request.pickup_time %>">
-      </div>
-
-      <!-- Label and input for pickup_date -->
-      <div class="form-group">
-        <label for="pickup_date" class="control-label">
-          Pickup date
-        </label>
-
-        <input type="text" id="pickup_date" name="pickup_date" placeholder="Pickup date" class="form-control" value="<%= @service_request.pickup_date %>">
-      </div>
-
-      <!-- Label and input for rc_name -->
-      <div class="form-group">
-        <label for="rc_name" class="control-label">
-          Rc name
-        </label>
-
-        <input type="text" id="rc_name" name="rc_name" placeholder="Rc name" class="form-control" value="<%= @service_request.rc_name %>">
-      </div>
 
       <button class="btn btn-success">
         Create Service Request

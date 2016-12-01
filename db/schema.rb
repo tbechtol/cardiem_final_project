@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129165821) do
+ActiveRecord::Schema.define(version: 20161201192146) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20161129165821) do
 
   create_table "service_requests", force: :cascade do |t|
     t.integer  "car_id"
-    t.integer  "rc_phone"
+    t.string   "rc_phone"
     t.integer  "driver_id"
     t.string   "repair_center_location"
     t.string   "pickup_location"
