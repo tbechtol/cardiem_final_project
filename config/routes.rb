@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root :to => "cars#index"
+  root :to => "home#index"
+  # Route for home page resource:
+  # LANDING PAGE
+  get "/", :controller => "home", :action => "index"
+
   # Routes for the Service_notification resource:
   # CREATE
   get "/service_notifications/new", :controller => "service_notifications", :action => "new"
