@@ -18,8 +18,15 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      
-      
+
+      <!-- Label and input for nickname -->
+      <div class="form-group">
+        <label for="nickname" class="control-label">
+          Nickname
+        </label>
+
+        <input type="text" id="nickname" name="nickname" placeholder="Nickname" class="form-control" value="<%= @car.nickname %>">
+      </div>
 
       <!-- Label and input for make -->
       <div class="form-group">

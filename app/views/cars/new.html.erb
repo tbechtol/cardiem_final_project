@@ -21,6 +21,15 @@
       <!-- Label and input for user_id -->
       <input type="hidden" name="user_id" value="<%= current_user.id %>">
 
+      <!-- Label and input for nickname -->
+      <div class="form-group">
+        <label for="nickname" class="control-label">
+          Car Nickname
+        </label>
+
+        <input type="text" id="nickname" name="nickname" placeholder="Nickname" class="form-control" value="<%= @car.nickname %>">
+      </div>
+
       <!-- Label and input for make -->
       <div class="form-group">
         <label for="make" class="control-label">
