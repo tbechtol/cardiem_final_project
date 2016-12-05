@@ -5,7 +5,7 @@ class CarsController < ApplicationController
     car = Car.find(params[:id])
 
     unless current_user == car.user
-      redirect_to :back, :alert => "You are not authorized for that."
+      redirect_to "/", :alert => "You are not authorized for that."
     end
   end
 
