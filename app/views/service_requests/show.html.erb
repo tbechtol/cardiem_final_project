@@ -9,34 +9,34 @@
       <dd>
         <% if @service_request.car.present? %>
           <a href="/cars/<%= @service_request.car_id %>">
-            <%= @service_request.car.user_id %>
+            <%= @service_request.car.nickname %>
           </a>
         <% end %>
       </dd>
-
-      <dt>Pickup location</dt>
+      <p></p>
+      <dt>Pickup Location</dt>
       <dd>
         <div>
-          <div id="location_map" style="height: 480px;"></div>
+          <div id="location_map" style="height: 360px; width: 360px"></div>
         </div>
       </dd>
+      <p></p>
+      <dt>Pickup Time</dt>
+      <dd><%= @service_request.pickup_time.to_s(:time) %></dd>
 
-      <dt>Pickup time</dt>
-      <dd><%= @service_request.pickup_time %></dd>
-
-      <dt>Pickup date</dt>
+      <dt>Pickup Date</dt>
       <dd><%= @service_request.pickup_date %></dd>
 
-      <dt>Service center phone</dt>
-      <dd><%= @service_request.rc_phone %></dd>
+      <dt>Service Center Phone</dt>
+      <dd><%= number_to_phone(@service_request.rc_phone) %></dd>
 
-      <dt>Service center name</dt>
+      <dt>Service Center Name</dt>
       <dd><%= @service_request.rc_name %></dd>
 
-      <dt>Service center location</dt>
+      <dt>Service Center Location</dt>
       <dd>
         <div>
-          <div id="location_map" style="height: 480px;"></div>
+          <div id="location_map" style="height: 360px; width: 360px"></div>
         </div>
       </dd>
 

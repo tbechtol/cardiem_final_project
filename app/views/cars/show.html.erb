@@ -1,21 +1,19 @@
 <div class="page-header">
-  <h3>Car #<%= @car.id %></h3>
+  <h3><%= @car.nickname %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>User</dt>
+      <!-- Similar to the index page, only the user's cars will be displayed and they must be logged-in  -->
+      <!-- <dt>User</dt>
       <dd>
         <% if @car.user.present? %>
           <a href="/users/<%= @car.user_id %>">
             <%= @car.user.email %>
           </a>
         <% end %>
-      </dd>
-
-      <dt>Nickname</dt>
-      <dd><%= @car.nickname %></dd>
+      </dd> -->
 
       <dt>Make</dt>
       <dd><%= @car.make %></dd>
@@ -27,7 +25,7 @@
       <dd><%= @car.year %></dd>
 
       <dt>Mileage</dt>
-      <dd><%= @car.mileage %></dd>
+      <dd><%= number_with_delimiter(@car.mileage, :delimeter => ",") %></dd>
 
       <dt>Service history</dt>
       <dd><%= @car.service_history %></dd>
@@ -56,13 +54,13 @@
   <div class="col-md-12">
     <ul class="list-group">
       <li class="list-group-item list-group-item-info">
-        Service_requests
+        Service Request History
       </li>
 
       <% @car.service_requests.each do |service_request| %>
         <li class="list-group-item">
           <a href="/service_requests/<%= service_request.id %>">
-            <%= service_request.car_id %>
+            Service Request <%= service_request.id %>
           </a>
           <div class="btn-group btn-group-xs pull-right">
             <a href="/service_requests/<%= service_request.id %>" class="btn btn-primary">
@@ -77,10 +75,14 @@
           </div>
         </li>
       <% end %>
-
-      <li class="list-group-item">
-
-
+</ul>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Create New Service Request
+      </li>
+      <p></p>
     <div class="row">
       <div class="col-md-12">
         <form action="/create_service_request" method="post">
@@ -150,13 +152,7 @@
           </div>
 
           <!-- Label and input for driver_id -->
-          <div class="form-group">
-            <label for="driver_id" class="control-label">
-              Driver
-            </label>
-
-            <%= select_tag(:driver_id, options_from_collection_for_select(Driver.all, :id, :email, @service_request.driver_id), :class => "form-control") %>
-          </div>
+          <input type="hidden" name="driver_id" value="<%= @service_request.driver_id %>">
 
 
           <button class="btn btn-success">

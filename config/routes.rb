@@ -57,22 +57,25 @@ Rails.application.routes.draw do
   get "/delete_car/:id", :controller => "cars", :action => "destroy"
   #------------------------------
 
-  devise_for :drivers
-  # Routes for the Driver resource:
-  # CREATE
-  get "/drivers/new", :controller => "drivers", :action => "new"
-  post "/create_driver", :controller => "drivers", :action => "create"
 
-  # READ
-  get "/drivers", :controller => "drivers", :action => "index"
-  get "/drivers/:id", :controller => "drivers", :action => "show"
-
-
-  devise_for :users
-  # Routes for the User resource:
-  # READ
-  get "/users", :controller => "users", :action => "index"
-  get "/users/:id", :controller => "users", :action => "show"
+  # Created but commented out as this functionality will be handled via the Admin portal.
+  # Users do not need to see others users or drivers.``
+  # devise_for :drivers
+  # # Routes for the Driver resource:
+  # # CREATE
+  # get "/drivers/new", :controller => "drivers", :action => "new"
+  # post "/create_driver", :controller => "drivers", :action => "create"
+  #
+  # # READ
+  # get "/drivers", :controller => "drivers", :action => "index"
+  # get "/drivers/:id", :controller => "drivers", :action => "show"
+  #
+  #
+  # devise_for :users
+  # # Routes for the User resource:
+  # # READ
+  # get "/users", :controller => "users", :action => "index"
+  # get "/users/:id", :controller => "users", :action => "show"
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

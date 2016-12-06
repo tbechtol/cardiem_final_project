@@ -105,8 +105,7 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>User</th>
-        <th>Nickname</th>
+        <th>Car</th>
         <th>Make</th>
         <th>Model</th>
         <th>Year</th>
@@ -117,18 +116,19 @@
 
       <% @cars.each do |car| %>
       <tr>
-        <td>
+        <!-- User must be signed in to see this page and it is only displaying their cars -->
+        <!-- <td>
           <% if car.user.present? %>
             <a href="/users/<%= car.user.id %>">
               <%= car.user.email %>
             </a>
           <% end %>
-        </td>
+        </td> -->
         <td><%= car.nickname %></td>
         <td><%= car.make %></td>
         <td><%= car.model %></td>
         <td><%= car.year %></td>
-        <td><%= car.mileage %></td>
+        <td><%=  number_with_delimiter(car.mileage, :delimeter => ",") %></td>
         <td><%= car.service_history %></td>
         <td>
           <a href="/cars/<%= car.id %>" class="btn btn-primary btn-xs">Show</a>
