@@ -66,6 +66,7 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
 
     @car.user_id = params[:user_id]
+    @car.nickname = params[:nickname]
     @car.make = params[:make]
     @car.model = params[:model]
     @car.year = params[:year]
