@@ -14,21 +14,28 @@
         <% end %>
       </dd>
 
+      <dt>Car</dt>
+      <dd><%= @service_notification.car.nickname %></dd>
+
+      <dt>Date of Request</dt>
+      <dd><%= @service_notification.service_request.pickup_date %></dd>
+
       <dt>Status</dt>
       <dd><%= @service_notification.status %></dd>
 
     </dl>
 
-    <div class="btn-group btn-group-justified">
-      <a href="/service_notifications" class="btn btn-primary">
-        Back
+    <div class="btn-group col-md-2">
+      <a href="/service_notifications" class="btn btn-primary btn-med">
+        Back to Service Notifications
       </a>
-      <a href="/service_notifications/<%= @service_notification.id %>/edit" class="btn btn-warning">
+      <!-- Removed as user doesn't need to see these actions -->
+      <!-- <a href="/service_notifications/<%= @service_notification.id %>/edit" class="btn btn-warning">
         Edit
       </a>
       <a href="/delete_service_notification/<%= @service_notification.id %>" class="btn btn-danger" rel="nofollow">
         Delete
-      </a>
+      </a> -->
     </div>
   </div>
 </div>

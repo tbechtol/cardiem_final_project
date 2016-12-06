@@ -6,6 +6,8 @@ class ServiceNotification < ApplicationRecord
 
   # Indirect associations
 
+  has_one :car, through: :service_request
+
   # Validations
 
 end

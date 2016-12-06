@@ -25,6 +25,8 @@
         </label>
 
         <%= select_tag(:car_id, options_from_collection_for_select(Car.all, :id, :user_id, @service_request.car_id), :class => "form-control") %>
+        UPDATE THIS TO SHOW CAR NICKNAME, NOT ID
+
       </div>
 
       <!-- Label and input for pickup_location -->

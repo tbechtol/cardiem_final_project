@@ -1,7 +1,6 @@
 <div class="page-header">
   <h1>
     <%= current_user.first_name %>'s Cars
-    <a href="/cars/new" class="btn btn-lg btn-success">New Car</a>
   </h1>
 </div><div class="row mb-1">
   <div class="col-md-12">
@@ -132,16 +131,19 @@
         <td><%= car.mileage %></td>
         <td><%= car.service_history %></td>
         <td>
-          <a href="/cars/<%= car.id %>" class="btn btn-primary">Show</a>
+          <a href="/cars/<%= car.id %>" class="btn btn-primary btn-xs">Show</a>
 
           <% if current_user == car.user %>
-            <a href="/cars/<%= car.id %>/edit" class="btn btn-warning">Edit</a>
-            <a href="/delete_car/<%= car.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+            <a href="/cars/<%= car.id %>/edit" class="btn btn-warning btn-xs">Edit</a>
+            <a href="/delete_car/<%= car.id %>" class="btn btn-danger btn-xs" rel="nofollow">Delete</a>
           <% end %>
         </td>
       </tr>
       <% end %>
     </table>
+    <div>
+        <a href="/cars/new" class="btn btn-med btn-success">New Car</a>
+    </div>
     <%= paginate @cars, theme: 'twitter-bootstrap-4' %>
   </div>
 </div>

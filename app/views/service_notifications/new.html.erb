@@ -21,7 +21,7 @@
       <!-- Label and input for service_request_id -->
       <div class="form-group">
         <label for="service_request_id" class="control-label">
-          Service request
+          Service Request
         </label>
 
         <%= select_tag(:service_request_id, options_from_collection_for_select(ServiceRequest.all, :id, :car_id, @service_notification.service_request_id), :class => "form-control") %>

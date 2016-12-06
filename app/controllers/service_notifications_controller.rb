@@ -50,6 +50,7 @@ class ServiceNotificationsController < ApplicationController
     @service_notification = ServiceNotification.find(params[:id])
 
     @service_notification.service_request_id = params[:service_request_id]
+    @service_nofication.car_nickname = params[:car_nickname]
     @service_notification.status = params[:status]
 
     save_status = @service_notification.save
