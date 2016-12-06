@@ -92,7 +92,6 @@
           <!-- Label and input for car_id -->
           <input type="hidden" name="car_id" value="<%= @car.id %>">
 
-
           <!-- Label and input for pickup_location -->
           <div class="form-group">
             <label for="pickup_location" class="control-label">
@@ -101,7 +100,6 @@
 
             <input type="text" id="pickup_location" name="pickup_location" placeholder="Pickup address" class="form-control" value="<%= @service_request.pickup_location %>">
           </div>
-
 
           <!-- Label and input for pickup_date -->
           <div class="form-group">
@@ -112,7 +110,6 @@
             <input type="text" id="pickup_date" name="pickup_date" placeholder="Pickup date" class="form-control" value="<%= @service_request.pickup_date %>">
             </div>
 
-
           <!-- Label and input for pickup_time -->
           <div class="form-group">
             <label for="pickup_time" class="control-label">
@@ -122,8 +119,7 @@
             <input type="text" id="pickup_time" name="pickup_time" placeholder="Pickup time" class="form-control" value="<%= @service_request.pickup_time %>">
           </div>
 
-
-          <!-- Label and input for rc_name -->
+          <!-- Label and input for rc_name (Service Center Name) -->
           <div class="form-group">
             <label for="rc_name" class="control-label">
               Service Center Name
@@ -141,8 +137,7 @@
             <input type="text" id="repair_center_location" name="repair_center_location" placeholder="Service center address" class="form-control" value="<%= @service_request.repair_center_location %>">
           </div>
 
-
-          <!-- Label and input for rc_phone -->
+          <!-- Label and input for rc_phone (Service Center Phone) -->
           <div class="form-group">
             <label for="rc_phone" class="control-label">
               Service Center Phone Number
@@ -151,7 +146,7 @@
             <input type="text" id="rc_phone" name="rc_phone" placeholder="Service center phone number" class="form-control" value="<%= @service_request.rc_phone %>">
           </div>
 
-          <!-- Label and input for driver_id -->
+          <!-- Label and input for driver_id, hidden and do be assigned by Admin -->
           <input type="hidden" name="driver_id" value="<%= @service_request.driver_id %>">
 
 

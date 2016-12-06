@@ -33,7 +33,6 @@ class ServiceRequestsController < ApplicationController
     @service_request = ServiceRequest.new
 
     @service_request.car_id = params[:car_id]
-    # @service_request.car_nickname = params[:car_nickname]
     @service_request.rc_phone = params[:rc_phone]
     @service_request.driver_id = params[:driver_id]
     @service_request.repair_center_location = params[:repair_center_location]
