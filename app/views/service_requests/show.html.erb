@@ -46,6 +46,8 @@
           <a href="/drivers/<%= @service_request.driver_id %>">
             <%= @service_request.driver.email %>
           </a>
+        <% else %>
+        Not assigned yet
         <% end %>
       </dd>
 

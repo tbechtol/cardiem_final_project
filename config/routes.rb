@@ -61,14 +61,14 @@ Rails.application.routes.draw do
   # Created but commented out as this functionality will be handled via the Admin portal.
   # Users do not need to see others users or drivers.``
   devise_for :drivers
-  # # Routes for the Driver resource:
-  # # CREATE
-  # get "/drivers/new", :controller => "drivers", :action => "new"
-  # post "/create_driver", :controller => "drivers", :action => "create"
-  # #
-  # # # READ
-  # get "/drivers", :controller => "drivers", :action => "index"
-  # get "/drivers/:id", :controller => "drivers", :action => "show"
+  # Routes for the Driver resource:
+  # CREATE
+  get "/drivers/new", :controller => "drivers", :action => "new"
+  post "/create_driver", :controller => "drivers", :action => "create"
+  #
+  # READ
+  get "/drivers", :controller => "drivers", :action => "index"
+  get "/drivers/:id", :controller => "drivers", :action => "show"
   #
   #
   devise_for :users

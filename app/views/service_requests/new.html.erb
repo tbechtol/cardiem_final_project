@@ -24,8 +24,7 @@
           Car
         </label>
 
-        <%= select_tag(:car_id, options_from_collection_for_select(Car.all, :id, :user_id, @service_request.car_id), :class => "form-control") %>
-        UPDATE THIS TO SHOW CAR NICKNAME, NOT ID
+        <%= select_tag(:car_id, options_from_collection_for_select(current_user.cars, :id, :nickname, @service_request.car_id), :class => "form-control") %>
 
       </div>
 
@@ -55,7 +54,7 @@
           Pickup Time
         </label>
 
-        <input type="text" id="pickup_time" name="pickup_time" placeholder="Pickup time" class="form-control" value="<%= @service_request.pickup_time %>">
+        <input type="text" id="pickup_time" name="pickup_time" placeholder="Pickup time" class="form-control" value="<%= @service_request.pickup_time.to_s(:time) %>">
       </div>
 
 
