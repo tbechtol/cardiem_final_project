@@ -73,13 +73,13 @@
   <div class="col-md-12">
     <ul class="list-group">
       <li class="list-group-item list-group-item-info">
-        Service notifications
+        Service Notification History
       </li>
 
       <% @service_request.service_notifications.each do |service_notification| %>
         <li class="list-group-item">
           <a href="/service_notifications/<%= service_notification.id %>">
-            <%= service_notification.service_request_id %>
+            <%= service_notification.status %>
           </a>
           <div class="btn-group btn-group-xs pull-right">
             <a href="/service_notifications/<%= service_notification.id %>" class="btn btn-primary">
@@ -95,22 +95,24 @@
         </li>
       <% end %>
 
-      <li class="list-group-item">
-        <form action="/create_service_notification" method="post">
+<!-- User does not need to be able to create service notifications, this is handled by Admin  -->
+
+      <!-- <li class="list-group-item">
+        <form action="/create_service_notification" method="post"> -->
       <!-- Hidden input for authenticity token to protect from forgery -->
-      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+      <!-- <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"> -->
 
       <!-- Label and input for service_request_id -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="service_request_id" class="control-label">
-          Service request
+          Service Request
         </label>
 
         <%= select_tag(:service_request_id, options_from_collection_for_select(ServiceRequest.all, :id, :car_id), :class => "form-control") %>
-      </div>
+      </div> -->
 
       <!-- Label and input for status -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="status" class="control-label">
           Status
         </label>
@@ -122,7 +124,8 @@
         Create Service Notification
       </button>
     </form>
-      </li>
+      </li> -->
+
     </ul>
   </div>
 </div>
