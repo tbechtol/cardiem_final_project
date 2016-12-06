@@ -17,6 +17,7 @@
         <th>Service Request</th>
         <th>Car</th>
         <th>Pickup Date</th>
+        <th>Status Posted</th>
         <th>Status</th>
         <th>Details</th>
       </tr>
@@ -31,7 +32,8 @@
           <% end %>
         </td>
         <td><%= service_notification.car.nickname %></td>
-        <td><%= service_notification.service_request.pickup_date %></td>
+        <td><%= localize(service_notification.service_request.pickup_date, :format => :long) %></td>
+        <td><%= localize(service_notification.created_at, :format => :long, :ampm => true ) %></td>
         <td><%= service_notification.status %></td>
         <td>
           <a href="/service_notifications/<%= service_notification.id %>" class="btn btn-primary">View</a>

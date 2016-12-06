@@ -18,7 +18,10 @@
       <dd><%= @service_notification.car.nickname %></dd>
 
       <dt>Date of Request</dt>
-      <dd><%= @service_notification.service_request.pickup_date %></dd>
+      <dd><%= localize(@service_notification.service_request.pickup_date, :format => :long) %></dd>
+
+      <dt>Status Posted</dt>
+      <dd><%= localize(@service_notification.created_at, :format => :long, :ampm => true ) %></dd>
 
       <dt>Status</dt>
       <dd><%= @service_notification.status %></dd>

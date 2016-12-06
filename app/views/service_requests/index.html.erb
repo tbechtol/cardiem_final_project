@@ -40,7 +40,7 @@
           <% end %>
         </td>
         <td><%= service_request.pickup_location %></td>
-        <td><%= service_request.pickup_date %></td>
+        <td><%= localize(service_request.pickup_date, :format => :long) %></td>
         <td><%= service_request.pickup_time.to_s(:time) %></td>
         <td ><%= service_request.rc_name %></td>
         <td><%= service_request.repair_center_location %></td>
