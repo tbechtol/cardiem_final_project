@@ -131,11 +131,11 @@
         <td><%= number_with_delimiter(car.mileage, :delimeter => ",") %></td>
         <td><%= car.service_history %></td>
         <td>
-          <a href="/cars/<%= car.id %>" class="btn btn-primary btn-xs">Show</a>
+          <a href="/cars/<%= car.id %>" class="btn btn-primary btn-sm"><i class="fa fa-search-plus"></i></a>
 
           <% if current_user == car.user %>
-            <a href="/cars/<%= car.id %>/edit" class="btn btn-warning btn-xs">Edit</a>
-            <a href="/delete_car/<%= car.id %>" class="btn btn-danger btn-xs" rel="nofollow">Delete</a>
+            <a href="/cars/<%= car.id %>/edit" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+            <a href="/delete_car/<%= car.id %>" class="btn btn-danger btn-sm" rel="nofollow"><i class="fa fa-trash-o"></i></a>
           <% end %>
         </td>
       </tr>
